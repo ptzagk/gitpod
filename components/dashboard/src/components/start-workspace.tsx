@@ -356,9 +356,9 @@ export class StartWorkspace extends React.Component<StartWorkspaceProps, StartWo
                 <Button className='button' variant='outlined' color='secondary' onClick={() => this.redirectToDashboard()}>Go to Workspaces</Button>
                 <Button className='button' variant='outlined' color='secondary' onClick={() => {
                   if (this.workspace && this.state && this.state.workspaceInstance) {
-                    console.log(this.workspace.baseImageNameResolved)
-                    this.workspace.baseImageNameResolved = "gitpod/workspace-full"
-                    this.startWorkspace(this.state.workspaceInstance.workspaceId, true)
+                    console.log(this.workspace.baseImageNameResolved);
+                    this.workspace.baseImageNameResolved = "gitpod/workspace-full";
+                    this.startWorkspace(this.state.workspaceInstance.workspaceId, true);
                   }
                 }}>Open Default Workspace</Button>
             </div>;
