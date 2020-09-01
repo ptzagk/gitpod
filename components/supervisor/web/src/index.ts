@@ -9,11 +9,10 @@ require('../public/index.css');
 // TODO window.title = 
 
 window.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener("message", evt => {
-        if (evt.isTrusted && evt.data.type == 'relocate' && evt.data.url) {
-            window.location.href = evt.data.url;
-        }
-    }, false);
+    const ideFrame = document.createElement('iframe');
+    ideFrame.src = window.location.protocol + '//' + window.location.host + '/ide/'
+    ideFrame.className = 'gitpod-frame ide';
+    document.body.appendChild(ideFrame);
 
     let segs = window.location.host.split('.');
     let startURL = window.location.protocol + '//' + segs.splice(2, 4).join('.') + '/start/#' + segs[0];
@@ -23,8 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
         startURL = window.location.protocol + '//' + window.location.host + '/start/#' + segs[segs.length - 2];
     }
 
-    const loadingScreen = document.createElement('iframe');
-    loadingScreen.src = startURL;
-    loadingScreen.className = 'gitpod-loading-screen';
-    document.body.appendChild(loadingScreen);
+    const loadingFrame = document.createElement('iframe');
+    loadingFrame.src = startURL;
+    loadingFrame.className = 'gitpod-frame loading';
+    document.body.appendChild(loadingFrame);
 });

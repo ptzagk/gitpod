@@ -4,7 +4,7 @@
  * See License-AGPL.txt in the project root for license information.
  */
 
-.gitpod-loading-screen {
+.gitpod-frame {
   position: absolute;
   top: 0;
   bottom: 0;
