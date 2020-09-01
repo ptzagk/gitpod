@@ -20,7 +20,6 @@ interface TermsOfServiceProps {
 }
 interface TermsOfServiceState {
     acceptsTos?: boolean;
-    acceptsComs?: boolean;
 }
 export class TermsOfService extends React.Component<TermsOfServiceProps, TermsOfServiceState> {
 
@@ -28,7 +27,6 @@ export class TermsOfService extends React.Component<TermsOfServiceProps, TermsOf
         super(props);
         this.state = {
             acceptsTos: false,
-            acceptsComs: false
         };
     }
 
@@ -65,14 +63,6 @@ export class TermsOfService extends React.Component<TermsOfServiceProps, TermsOf
                     <h1>Create account</h1>
                     <form action={ gitpodHost.withApi({ pathname: '/tos/proceed' }).toString() } method="post" id="accept-tos-form">
                         <div className="tos-checks">
-                            <p><label style={{ display: 'flex', alignItems: 'center' }}>
-                                <Checkbox
-                                    value="true"
-                                    name="agreeCOMS"
-                                    checked={this.state.acceptsComs}
-                                    onChange={() => this.setState({ acceptsComs: !this.state.acceptsComs })} />
-                                I wish to receive news and updates via email
-                            </label></p>
                             <p><label style={{ display: 'flex', alignItems: 'center' }}>
                                 <Checkbox
                                     value="true"
