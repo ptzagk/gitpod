@@ -354,7 +354,9 @@ export class StartWorkspace extends React.Component<StartWorkspaceProps, StartWo
         if (isError) {
             message = <div className="message action">
                 <Button className='button' variant='outlined' color='secondary' onClick={() => this.redirectToDashboard()}>Go to Workspaces</Button>
-                <Button className='button' variant='outlined' color='secondary'>Open Default Workspace</Button>
+                <Button className='button' variant='outlined' color='secondary' onClick={() => {
+                  this.startWorkspace(this.props.workspaceId)
+                }}>Open Default Workspace</Button>
             </div>;
         }
         if (this.state && this.state.workspaceInstance && this.state.workspaceInstance.status.phase == 'running') {
